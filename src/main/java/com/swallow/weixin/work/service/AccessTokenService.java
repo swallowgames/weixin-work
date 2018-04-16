@@ -2,6 +2,7 @@ package com.swallow.weixin.work.service;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Stopwatch;
+import com.swallow.weixin.work.context.TokenConText;
 import com.swallow.weixin.work.entity.AccessToken;
 import com.swallow.weixin.work.repository.AccessTokenRepository;
 import org.slf4j.Logger;
@@ -24,17 +25,12 @@ public class AccessTokenService {
 
     private static final Logger logger = LoggerFactory.getLogger(AccessTokenService.class);
 
-    private volatile ConcurrentHashMap<String, String> tokens = new ConcurrentHashMap<>(12);
 
     @Autowired
     private AccessTokenRepository accessTokenRepository;
 
     @Value("${corp_secret}")
     public String secrets;
-
-    public String get(String secret) {
-        return tokens.get(secret);
-    }
 
     @Scheduled(cron = "0 0 * * * ?")
     public void refresh() {
@@ -49,7 +45,7 @@ public class AccessTokenService {
                     tokens.put(entry.getKey(), accessToken.getAccess_token());
                 }
             }
-            this.tokens = tokens;
+            TokenConText.addAll(tokens);
             logger.info("access token = {}", JSON.toJSONString(tokens));
         } catch (Exception e) {
             logger.error("refresh access token task error", e);

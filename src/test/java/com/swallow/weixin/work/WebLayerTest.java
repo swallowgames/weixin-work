@@ -1,5 +1,6 @@
 package com.swallow.weixin.work;
 
+import com.swallow.weixin.work.context.TokenConText;
 import com.swallow.weixin.work.controller.WeixinController;
 import com.swallow.weixin.work.service.AccessTokenService;
 import org.junit.Test;
@@ -29,12 +30,9 @@ public class WebLayerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    private AccessTokenService accessTokenService;
-
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
-        given(this.accessTokenService.get(anyString())).willReturn(anyString());
+        given(TokenConText.get(anyString())).willReturn(anyString());
         this.mockMvc.perform(get("/getAccessToken"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("")))

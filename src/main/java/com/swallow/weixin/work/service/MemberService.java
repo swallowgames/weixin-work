@@ -1,6 +1,7 @@
 package com.swallow.weixin.work.service;
 
 import com.google.common.collect.Lists;
+import com.swallow.weixin.work.context.TokenConText;
 import com.swallow.weixin.work.enums.AppType;
 import com.swallow.weixin.work.param.MemberParam;
 import com.swallow.weixin.work.repository.MemberRepository;
@@ -16,9 +17,6 @@ public class MemberService {
     private MemberRepository memberRepository;
 
     @Autowired
-    private AccessTokenService accessTokenService;
-
-    @Autowired
     private DeptService deptService;
 
     private static AtomicLong index = new AtomicLong(10);
@@ -26,7 +24,7 @@ public class MemberService {
     public Boolean create() {
         Long c = index.incrementAndGet();
         MemberParam param = new MemberParam();
-        param.setAccess_token(accessTokenService.get(AppType.contact.name()));
+        param.setAccess_token(TokenConText.get(AppType.contact.name()));
         param.setUserid("swallow" + c);
         param.setName("许望龙" + c);
         param.setDepartment(Lists.newArrayList(deptService.getList().get(0).getId()));
