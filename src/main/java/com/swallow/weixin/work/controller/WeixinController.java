@@ -27,7 +27,7 @@ public class WeixinController {
     @GetMapping(value = "createDept")
     public Boolean createDept(){
         boolean result = true;
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             result &= memberService.create();
         }
         return result;
