@@ -24,7 +24,7 @@ public class AccessToken extends BaseResult{
 
     @Override
     public boolean isValid(){
-        if (getErrcode() == 0){
+        if (super.isValid()){
             return expires_in != null && expires_in > 0;
         }else{
             return false;

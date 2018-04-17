@@ -2,7 +2,6 @@ package com.swallow.weixin.work.controller;
 
 import com.swallow.weixin.work.context.TokenConText;
 import com.swallow.weixin.work.enums.AppType;
-import com.swallow.weixin.work.service.AccessTokenService;
 import com.swallow.weixin.work.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

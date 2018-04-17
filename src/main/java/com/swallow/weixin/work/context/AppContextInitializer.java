@@ -6,8 +6,9 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 @Component
-public class WeixinApplicationContextInitializer implements ApplicationListener<ContextRefreshedEvent> {
+public class AppContextInitializer implements ApplicationListener<ContextRefreshedEvent> {
     public void onApplicationEvent(ContextRefreshedEvent event) {
+        // 刷新token
         AccessTokenService accessTokenService = event.getApplicationContext().getBean(AccessTokenService.class);
         accessTokenService.refresh();
     }
