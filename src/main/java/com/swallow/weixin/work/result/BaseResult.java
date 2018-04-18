@@ -1,4 +1,4 @@
-package com.swallow.weixin.work.entity;
+package com.swallow.weixin.work.result;
 
 public class BaseResult {
 

@@ -1,4 +1,4 @@
-package com.swallow.weixin.work.entity;
+package com.swallow.weixin.work.result;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,10 +1,9 @@
 package com.swallow.weixin.work.repository;
 
 import com.alibaba.fastjson.JSON;
-import com.swallow.weixin.work.entity.DeptListResult;
-import com.swallow.weixin.work.entity.DeptResult;
+import com.swallow.weixin.work.result.DeptListResult;
+import com.swallow.weixin.work.result.DeptResult;
 import com.swallow.weixin.work.param.DeptParam;
-import com.swallow.weixin.work.util.BeanUtils;
 import com.swallow.weixin.work.util.HttpUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

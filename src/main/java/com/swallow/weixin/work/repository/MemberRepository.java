@@ -1,7 +1,7 @@
 package com.swallow.weixin.work.repository;
 
 import com.alibaba.fastjson.JSON;
-import com.swallow.weixin.work.entity.BaseResult;
+import com.swallow.weixin.work.result.BaseResult;
 import com.swallow.weixin.work.param.MemberParam;
 import com.swallow.weixin.work.util.HttpUtils;
 import org.slf4j.Logger;

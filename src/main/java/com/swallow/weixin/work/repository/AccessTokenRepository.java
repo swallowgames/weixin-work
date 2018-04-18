@@ -1,19 +1,13 @@
 package com.swallow.weixin.work.repository;
 
 import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Maps;
 import com.swallow.weixin.work.param.AccessTokenParam;
-import com.swallow.weixin.work.util.BeanUtils;
 import com.swallow.weixin.work.util.HttpUtils;
-import com.swallow.weixin.work.entity.AccessToken;
+import com.swallow.weixin.work.result.AccessToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.Map;
 
 @Repository
 public class AccessTokenRepository {

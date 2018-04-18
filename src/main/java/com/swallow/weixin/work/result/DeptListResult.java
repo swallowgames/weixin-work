@@ -1,4 +1,4 @@
-package com.swallow.weixin.work.entity;
+package com.swallow.weixin.work.result;
 
 import com.swallow.weixin.work.param.DeptParam;
 import lombok.Data;
