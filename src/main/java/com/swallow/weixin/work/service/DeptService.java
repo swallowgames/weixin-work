@@ -17,7 +17,7 @@ public class DeptService {
 
     public List<DeptParam> getList(){
         DeptParam param = new DeptParam();
-        param.setAccess_token(TokenConText.get(AppType.test.name()));
+        param.setAccess_token(TokenConText.get(AppType.contact.name()));
         return deptRepository.list(param);
     }
 
